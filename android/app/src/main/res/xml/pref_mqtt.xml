@@ -46,4 +46,47 @@
         android:key="mqtt_uuid"
         android:summary="@string/pref_mqtt_uuid_summary"
         android:title="@string/pref_mqtt_uuid_title" />
+    <EditTextPreference
+        android:defaultValue="@string/pref_mqtt_quality_default"
+        android:dependency="mqtt_remote_enable"
+        android:inputType="number"
+        android:key="mqtt_quality"
+        android:maxLines="1"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:summary="@string/pref_mqtt_quality_summary"
+        android:title="@string/pref_mqtt_quality_title" />
+    <EditTextPreference
+        android:defaultValue="@string/pref_ftp_hostname_default"
+        android:dependency="mqtt_remote_enable"
+        android:inputType="textUri"
+        android:key="ftp_hostname"
+        android:maxLines="1"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:title="@string/pref_ftp_hostname_title" />
+    <EditTextPreference
+        android:defaultValue="@string/pref_ftp_port_default"
+        android:dependency="mqtt_remote_enable"
+        android:inputType="number"
+        android:key="ftp_port"
+        android:maxLines="1"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:title="@string/pref_ftp_port_title" />
+    <EditTextPreference
+        android:dependency="mqtt_remote_enable"
+        android:inputType="textShortMessage|textNoSuggestions"
+        android:key="ftp_username"
+        android:title="@string/pref_ftp_username_title" />
+    <EditTextPreference
+        android:dependency="mqtt_remote_enable"
+        android:inputType="textPassword"
+        android:key="ftp_password"
+        android:title="@string/pref_ftp_password_title" />
+    <EditTextPreference
+        android:defaultValue="@string/pref_ftp_dir_default"
+        android:dependency="mqtt_remote_enable"
+        android:key="ftp_dir"
+        android:title="@string/pref_ftp_dir_title" />
 </PreferenceScreen>

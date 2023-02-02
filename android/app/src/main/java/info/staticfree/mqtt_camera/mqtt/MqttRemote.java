@@ -2,6 +2,7 @@ package info.staticfree.mqtt_camera.mqtt;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.os.Handler;
 import android.os.BatteryManager;
 import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
@@ -73,6 +74,10 @@ public class MqttRemote {
         }
     };
 
+    Handler handler = new Handler();
+    Runnable runnable;
+    int delay = 60000;
+
     public MqttRemote(@NonNull Context context, @NonNull RemoteControlCamera camera) {
         this.context = context;
         this.camera = camera;
@@ -89,11 +94,21 @@ public class MqttRemote {
             }
         }
         batteryMonitor.onPause();
+        handler.removeCallbacks(runnable);
     }
 
     public void onResume() {
         connect();
         batteryMonitor.onResume();
+
+        handler.postDelayed(runnable = new Runnable() {
+            public void run() {
+                handler.postDelayed(runnable, delay);
+                camera.takePicture();
+                Toast.makeText(context, "Timelapsed capturing ...",
+                Toast.LENGTH_SHORT).show();
+            }
+        }, delay);
     }
 
     private void connect() {

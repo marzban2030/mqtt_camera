@@ -241,7 +241,7 @@ public class CameraFragment extends Fragment
         @Override
         public void onImageAvailable(ImageReader reader) {
             if (mqttRemote != null) {
-                backgroundHandler.post(new ImagePublisher(reader.acquireNextImage(), mqttRemote,
+                backgroundHandler.post(new ImagePublisher(getActivity().getApplicationContext(), reader.acquireNextImage(), mqttRemote,
                         "image"));
             }
         }

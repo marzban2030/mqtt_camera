@@ -24,6 +24,17 @@
     <string name="pref_mqtt_remote_control_title">MQTT Remote</string>
     <string name="pref_mqtt_ssl_title">Use SSL/TLS</string>
     <string name="pref_mqtt_username_title">Username</string>
-    <string name="pref_mqtt_uuid_summary">This will publish images to topic camera/{UUID}/image</string>
+    <string name="pref_mqtt_uuid_summary">Sent images to FTP server result will be published to topic camera/{UUID}/image</string>
     <string name="pref_mqtt_uuid_title">Device UUID</string>
+    <string name="pref_mqtt_quality_default">80</string>
+    <string name="pref_mqtt_quality_title">Image quality</string>
+    <string name="pref_mqtt_quality_summary">Taken image quality must be a number between 0 and 100</string>
+    <string name="pref_ftp_hostname_default">ftpHost.com</string>
+    <string name="pref_ftp_hostname_title">FTP hostname</string>
+    <string name="pref_ftp_password_title">FTP Password</string>
+    <string name="pref_ftp_port_default">21</string>
+    <string name="pref_ftp_port_title">FTP port</string>
+    <string name="pref_ftp_dir_title">FTP working directory</string>
+    <string name="pref_ftp_username_title">FTP Username</string>
+    <string name="pref_ftp_dir_default">/workingFTPdir</string>
 </resources>
